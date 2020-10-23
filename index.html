@@ -19,14 +19,20 @@
     <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
 
     <!-- create image object -->
-    <a-image rotation="-90 0 0" src="#tree"></a-image>
-    <a-text value="Pizza Time" rotation="-90 0 0" position="-0.5 0 -1" color="green"></a-text>
+    <a-marker type="pattern" url="pattern-apple.patt">
+    	 <a-image rotation="-90 0 0" src="#tree"></a-image>
+    	 <a-text value="Pizza Time" rotation="-90 0 0" position="-0.5 0 -1" color="green"></a-text>
+    </a-marker>
+   
+   <a-marker preset="hiro">
+   	    <a-entity obj-model="obj: #snowflake" scale="0.5 0.5 0.5" rotation="0 0 0" position="0 0 0">
+    		<a-animation attribute="rotation" to="90 360 0" dur="9000" repeat="indefinite" easing="linear"></a-animation>
+    	</a-entity>
+   </a-marker>
 
-    <a-entity obj-model="obj: #snowflake" scale="0.5 0.5 0.5" rotation="0 0 0" position="0 0 0">
-    	<a-animation attribute="rotation" to="90 360 0" dur="9000" repeat="indefinite" easing="linear"></a-animation>
-    </a-entity>
     <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
+    <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
+    <a-entity camera></a-entity>
   </a-scene>
 </body>
 </html>
